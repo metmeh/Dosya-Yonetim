@@ -20,7 +20,7 @@ func main() {
 		case 2:
 			dosyaSil()
 		case 3:
-			fmt.Println("-------------------------")
+			dosyaTasi()
 		case 4:
 			fmt.Println("Çıkıs Yapılıyor.....")
 			return
@@ -65,4 +65,6 @@ func dosyaTasi() {
 	fmt.Scanln(&tasi)
 
 	os.Rename(dosyaAdı, filepath.Join(tasi, filepath.Base(dosyaAdı)))
+
+	fmt.Println("Dosya Taşındı.")
 }
