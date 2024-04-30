@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func main() {
@@ -51,4 +52,17 @@ func dosyaSil() {
 		return
 	}
 	fmt.Println("Dosya Silindi.")
+}
+
+func dosyaTasi() {
+
+	var dosyaAdı, tasi string
+
+	fmt.Println("Taşıncak dosyanın adı: ")
+	fmt.Scanln(&dosyaAdı)
+
+	fmt.Println("Taşınacak konum adresi: ")
+	fmt.Scanln(&tasi)
+
+	os.Rename(dosyaAdı, filepath.Join(tasi, filepath.Base(dosyaAdı)))
 }
